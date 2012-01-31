@@ -65,5 +65,13 @@ endfunction
 
 inoremap <Tab> <C-R>=MyTabOrComplete()<CR>
 
-" Use powerline
+" Always show the statusline
 set laststatus=2
+
+" Open files on last position if available
+if has("autocmd")
+    au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
+
+let g:Powerline_symbols="unicode"
