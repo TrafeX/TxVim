@@ -65,6 +65,5 @@ endfunction
 
 inoremap <Tab> <C-R>=MyTabOrComplete()<CR>
 
-" Extend statusline with current branch from fugitive
-set statusline +=%{fugitive#statusline()}
-
+" Use powerline
+set laststatus=2
