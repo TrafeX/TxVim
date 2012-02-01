@@ -1,0 +1,1 @@
+../src/phpcomplete.vim/ftplugin/phpcomplete.vim

@@ -1,3 +1,6 @@
+" TrafeX' VIM config
+" Based on configs from Matthew Weier O'Phinney and Tobias Schlitt
+
 " Turn on filetype detection
 :filetype on
 
@@ -25,7 +28,7 @@
 :syntax on
 
 " Tagfile for the tag list
-:set tags=$HOME/.vim/doc/tags
+:set tags=$HOME/.vim/doc/tags,tags;
 
 " We've a fast TTY :)
 :set ttyfast
@@ -74,4 +77,31 @@ if has("autocmd")
     \| exe "normal! g'\"" | endif
 endif
 
+" Undo history between sessions
+set undodir=~/.vim/undodir
+set undofile
+set undolevels=1000 "maximum number of changes that can be undone
+set undoreload=10000 "maximum number lines to save for undo on a buffer reload
+
+" Repair wired terminal/vim settings
+set backspace=start,eol,indent
+
+" === PLUGIN SETTINGS ===
+
+" Load a tag file
+" Loads a tag file from ~/.vim/mytags/, based on the argument provided. The
+" command "Ltag"" is mapped to this function.
+:function! LoadTags(file)
+:   let tagspath = $HOME . "/.vim/mytags/" . a:file
+:   let tagcommand = 'set tags+=' . tagspath
+:   execute tagcommand
+:endfunction
+:command! -nargs=1 Ltag :call LoadTags("<args>")
+
+" These are tag files I've created; you may want to remove/change these for your
+" own usage.
+:call LoadTags("zf1")
+:call LoadTags("glitch3")
+
+" Set powerline to use unicode symbols
 let g:Powerline_symbols="unicode"
