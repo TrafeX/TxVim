@@ -86,6 +86,12 @@ set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 " Repair wired terminal/vim settings
 set backspace=start,eol,indent
 
+" Colorscheme
+let g:solarized_termcolors=256
+set background=dark
+set t_Co=256
+colorscheme solarized
+
 " === PLUGIN SETTINGS ===
 
 " Load a tag file
