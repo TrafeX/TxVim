@@ -2,6 +2,7 @@ TrafeX' Vim config
 ==================
 
 With:
+
 * Taglist
 * Fugitive for GIT support
 * PHP functionlist from http://lerdorf.com/funclist.txt
