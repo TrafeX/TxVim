@@ -33,6 +33,9 @@
 " We've a fast TTY :)
 :set ttyfast
 
+" Don't try to redraw every scroll action, it's slow
+:set lazyredraw
+
 " Show wich commands I've entered and in what mode we are in the statusline
 :set showcmd
 :set showmode
@@ -78,10 +81,13 @@ if has("autocmd")
 endif
 
 " Undo history between sessions
-set undodir=~/.vim/undodir
-set undofile
-set undolevels=1000 "maximum number of changes that can be undone
-set undoreload=10000 "maximum number lines to save for undo on a buffer reload
+" Only works in version 7.3 or higher
+if v:version >= 703
+    set undofile
+    set undodir=~/.vim/undodir
+    set undolevels=1000 "maximum number of changes that can be undone
+    set undoreload=10000 "maximum number lines to save for undo on a buffer reload
+endif
 
 " Repair wired terminal/vim settings
 set backspace=start,eol,indent
@@ -104,8 +110,7 @@ colorscheme solarized
 :endfunction
 :command! -nargs=1 Ltag :call LoadTags("<args>")
 
-" These are tag files I've created; you may want to remove/change these for your
-" own usage.
+" Load some default tags 
 :call LoadTags("zf1")
 :call LoadTags("glitch3")
 
