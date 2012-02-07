@@ -48,6 +48,9 @@
 :set ignorecase
 :set smartcase
 
+" "Hidden" buffers don't require saving before editing another file.
+:set hidden
+
 " .inc, phpt, phtml, phps files as PHP
 :autocmd BufNewFile,BufRead *.inc set ft=php
 :autocmd BufNewFile,BufRead *.phpt set ft=php
@@ -116,3 +119,15 @@ colorscheme solarized
 
 " Set powerline to use unicode symbols
 let g:Powerline_symbols="unicode"
+
+" TagList options
+let Tlist_Use_Right_Window = 1
+let Tlist_Compact_Format = 1
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_File_Fild_Auto_Close = 1
+let Tlist_Inc_Winwidth = 0
+let Tlist_Close_On_Select = 1
+let Tlist_Process_File_Always = 1
+let Tlist_Display_Prototype = 0
+let Tlist_Display_Tag_Scope = 1
