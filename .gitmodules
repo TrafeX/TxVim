@@ -1,15 +1,15 @@
 [submodule "src/phpcomplete.vim"]
     path = src/phpcomplete.vim
     url = https://github.com/EvanDotPro/phpcomplete.vim.git
-
 [submodule "src/vim-colors-solarized"]
     path = src/vim-colors-solarized
     url = https://github.com/altercation/vim-colors-solarized.git
-
 [submodule "src/vim-powerline"]
     path = src/vim-powerline
     url = https://github.com/Lokaltog/vim-powerline.git
-
 [submodule "src/vip"]
     path = src/vip
     url = https://github.com/tobyS/vip.git
+[submodule "src/supertab"]
+	path = src/supertab
+	url = https://github.com/ervandew/supertab.git

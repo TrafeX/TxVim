@@ -96,9 +96,9 @@ endif
 set backspace=start,eol,indent
 
 " Colorscheme
-let g:solarized_termcolors=256
+let g:solarized_termcolors=16
 set background=dark
-set t_Co=256
+set t_Co=16
 colorscheme solarized
 
 " === PLUGIN SETTINGS ===
@@ -131,3 +131,6 @@ let Tlist_Close_On_Select = 1
 let Tlist_Process_File_Always = 1
 let Tlist_Display_Prototype = 0
 let Tlist_Display_Tag_Scope = 1
+
+" supertab settings
+let g:SuperTabDefaultCompletionType = "context"
