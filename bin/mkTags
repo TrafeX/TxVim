@@ -37,6 +37,8 @@ cd "$dir"
 exec ctags-exuberant -f ~/.vim/mytags/$name \
 -h ".php" -R \
 --exclude="\.svn" \
+--exclude="\.git" \
+--languages=PHP
 --totals=yes \
 --tag-relative=yes \
 --fields=+afkst \

@@ -40,6 +40,9 @@
 :set showcmd
 :set showmode
 
+" Don't leave any files after closing VIM
+:set nobackup
+
 " Turn on filetype plugins
 :filetype plugin on
 :filetype plugin indent on
@@ -96,10 +99,13 @@ endif
 set backspace=start,eol,indent
 
 " Colorscheme
-let g:solarized_termcolors=16
+" let g:solarized_termcolors=16
 set background=dark
-set t_Co=16
+set t_Co=256
 colorscheme solarized
+
+" === KEYBOARD SHORTCUT'S ==
+nnoremap <C-F8> :TlistToggle<CR><CR>
 
 " === PLUGIN SETTINGS ===
 
