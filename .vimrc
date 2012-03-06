@@ -140,3 +140,6 @@ let Tlist_Display_Tag_Scope = 1
 
 " supertab settings
 let g:SuperTabDefaultCompletionType = "context"
+
+" load NERDTree on startup if no other files are given as argument
+autocmd vimenter * if !argc() | NERDTree | endif

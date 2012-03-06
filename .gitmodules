@@ -13,3 +13,6 @@
 [submodule "src/supertab"]
 	path = src/supertab
 	url = https://github.com/ervandew/supertab.git
+[submodule "src/nerdtree"]
+	path = src/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
