@@ -104,6 +104,9 @@ set background=dark
 set t_Co=256
 colorscheme solarized
 
+" Remove trailing whitespaces on save
+autocmd BufWritePre * :%s/\s\+$//e
+
 " === KEYBOARD SHORTCUT'S ==
 nnoremap <C-F8> :TlistToggle<CR><CR>
 
@@ -119,7 +122,7 @@ nnoremap <C-F8> :TlistToggle<CR><CR>
 :endfunction
 :command! -nargs=1 Ltag :call LoadTags("<args>")
 
-" Load some default tags 
+" Load some default tags
 :call LoadTags("zf1")
 :call LoadTags("glitch3")
 
