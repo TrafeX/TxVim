@@ -95,6 +95,9 @@ if v:version >= 703
     set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 endif
 
+" Save the swap files here
+set dir=~/.vim/swapdir
+
 " Repair wired terminal/vim settings
 set backspace=start,eol,indent
 
