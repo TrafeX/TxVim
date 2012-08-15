@@ -1,6 +1,5 @@
 *.cache
 mytags
-undodir
-swapdir
 .netrwhist
 bundle
+tmp
