@@ -54,6 +54,9 @@
 " "Hidden" buffers don't require saving before editing another file.
 :set hidden
 
+" Use the mouse in VIM
+:set mouse=a
+
 " .inc, phpt, phtml, phps files as PHP
 :autocmd BufNewFile,BufRead *.inc set ft=php
 :autocmd BufNewFile,BufRead *.phpt set ft=php

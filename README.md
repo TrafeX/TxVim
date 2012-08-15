@@ -9,5 +9,7 @@ With:
 * Powerline
 * PHP autocomplete
 * Good tab/ident settings
-* Project
+* NERDTRee
+* Solarized colorscheme
+* Mouse support under Ubuntu
 * Much more..
