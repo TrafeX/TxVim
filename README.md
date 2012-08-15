@@ -16,12 +16,14 @@ With:
 * Much more..
 
 Bundles:
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'scrooloose/nerdtree'
-Bundle 'EvanDotPro/phpcomplete.vim'
-Bundle 'ervandew/supertab'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'tobyS/vip'
+* 'gmarik/vundle'
+* 'tpope/vim-fugitive'
+* 'scrooloose/nerdtree'
+* 'EvanDotPro/phpcomplete.vim'
+* 'ervandew/supertab'
+* 'altercation/vim-colors-solarized'
+* 'Lokaltog/vim-powerline'
+* 'tobyS/vip'
 
+
+To use the bundles, open `vim` and run `:BundleInstall`
