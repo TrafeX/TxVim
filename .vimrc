@@ -1,11 +1,30 @@
 " TrafeX' VIM config
 " Based on configs from Matthew Weier O'Phinney and Tobias Schlitt
 
-" Turn on filetype detection
-:filetype on
-
 " We don't need to be compatible
 :set nocompatible
+
+" Turn off filetype detection for vundle
+:filetype off
+
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" My Bundles
+Bundle 'tpope/vim-fugitive'
+Bundle 'scrooloose/nerdtree'
+Bundle 'EvanDotPro/phpcomplete.vim'
+Bundle 'ervandew/supertab'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'tobyS/vip'
+
+filetype plugin indent on
 
 " Always use UTF-8 as default
 :set encoding=utf-8
