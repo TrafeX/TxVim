@@ -24,17 +24,28 @@ Bundles:
 * 'altercation/vim-colors-solarized'
 * 'Lokaltog/vim-powerline'
 * 'tobyS/vip'
+* 'MarkDown'
+* 'tpope/vim-pastie'
 
-
-To use the bundles, open `vim` and run `:BundleInstall`
+Install on Ubuntu
+================
+For the best VIM experience on Ubuntu follow the following steps:
+1. Clone the repository to ~/.vim and make a symlink for the .vimrc
+2. Install vim-gnome, this gives a better integration on your terminal and let you use the system clipboard
+3. To use the bundles, open `vim` and run `:BundleInstall`
+4. Install ack-grep
+5. @todo: Setup colors of your terminal for the solarize colorscheme
 
 Tricks
 ======
+Some random vim tricks I like to remember
 
 * `gv` Reverts last visual selection
 * `q:` Show :command history
 * `:earlier 15m` Lets you go back 15 mins in your undo history
-
+* `di'` Will delete everything within the quotes
+* `"+y` Yank to system-clipboard
+* `zt` Center current line in the middle of the screen
 
 Bindings
 ========

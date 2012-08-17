@@ -29,6 +29,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'taglist.vim'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-pastie'
 
 " ----------------------------
 " Regular Vim Configuration (No Plugins Needed)
@@ -52,7 +53,7 @@ Bundle 'scrooloose/nerdtree'
 :set mouse=a
 
 " Yanks go to clipboard
-:set clipboard+=unnamed
+:set clipboard=unnamed
 
 " Use a menu for autocomplete
 :set wildmenu
@@ -95,8 +96,8 @@ set laststatus=2
 :set autoindent
 :set smartindent
 
-" Wrap text after 120 chars
-:set textwidth=120
+" Don't wrap text
+:set nowrap
 
 " Tagfile for the tag list
 :set tags=$HOME/.vim/doc/tags,tags;
@@ -115,7 +116,7 @@ set laststatus=2
 " Only works in version 7.3 or higher
 if v:version >= 703
     set undofile
-    set undodir=~/.vim/undodir
+    set undodir=~/.vim/tmp/undodir
     set undolevels=1000 "maximum number of changes that can be undone
     set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 endif
