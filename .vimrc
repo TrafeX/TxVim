@@ -190,13 +190,16 @@ autocmd vimenter * if !argc() | NERDTree | endif
 autocmd BufWritePre * :%s/\s\+$//e
 
 " ---------------
-" Set correct filetype on PHP files
+" Set correct filetypes
 " ---------------
 " .inc, phpt, phtml, phps files as PHP
 :autocmd BufNewFile,BufRead *.inc set ft=php
 :autocmd BufNewFile,BufRead *.phpt set ft=php
 :autocmd BufNewFile,BufRead *.phtml set ft=php
 :autocmd BufNewFile,BufRead *.phps set ft=php
+" Vagrantfile, .pp as Ruby
+:autocmd BufNewFile,BufRead *Vagrantfile set ft=ruby
+:autocmd BufNewFile,BufRead *.pp set ft=ruby
 
 " ---------------
 " Tagfile loading
