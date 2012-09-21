@@ -30,6 +30,9 @@ Bundle 'taglist.vim'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-pastie'
+Bundle 'docteurklein/php-getter-setter.vim'
+Bundle 'stephpy/vim-php-cs-fixer'
+Bundle 'phpcs.vim'
 
 " ----------------------------
 " Regular Vim Configuration (No Plugins Needed)
@@ -82,6 +85,7 @@ set laststatus=2
 " Always use UTF-8 as default
 :set encoding=utf-8
 
+
 " ---------------
 " Text Format
 " ---------------
@@ -133,6 +137,13 @@ endif
 :set wildignore+=*.o,*.obj,*.exe,*.so,*.dll,*.pyc,.svn,.hg,.bzr,.git,
   \.sass-cache,*.class,*.scssc,*.cssc,sprockets%*,*.lessc
 
+" ---------------
+" Sounds
+" ---------------
+set noerrorbells
+set novisualbell
+set t_vb=
+
 " ----------------------------
 " Plugin configuration
 " ----------------------------
@@ -180,6 +191,15 @@ let g:SuperTabDefaultCompletionType = "context"
 " load NERDTree on startup if no other files are given as argument
 autocmd vimenter * if !argc() | NERDTree | endif
 
+" ---------------
+" PHP CS Fixed
+" ---------------
+let g:php_cs_fixer_path = "~/.vim/resources/php-cs-fixer.phar"
+
+" ---------------
+" PHP CodeStyle
+" ---------------
+let g:phpcs_std_list="PSR2"
 " ----------------------------
 " Functions
 " ----------------------------
@@ -237,6 +257,7 @@ if has("autocmd")
     au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g'\"" | endif
 endif
+
 " ----------------------------
 " Bindings
 " ----------------------------

@@ -56,3 +56,4 @@ Bindings
 * `<C-H>` Search phpm for the function
 * `<C-a>` Align a function or array
 * `<C-c>` (un-)comment
+* `<C-^>` Open last closed window
