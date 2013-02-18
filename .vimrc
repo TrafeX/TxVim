@@ -239,11 +239,11 @@ autocmd BufWritePre * :%s/\s\+$//e
 " ---------------
 " Generate a tagfile with mkTags and directly load it
 :function! GenerateTags()
-:   let currentPath = expand("%:p:h")
-:   let baseName = expand("%:p:h:t")
 :   let mktagspath = "!~/.vim/bin/mkTags"
-:   execute mktagspath . " " . currentPath
-:   execute ":Ltag " . baseName
+:   execute mktagspath . " `pwd`"
+:   let baseName = system('basename `pwd`')
+:   execute ":Ltag " baseName
+:   echo "Loaded tagfile: " . baseName
 :endfunction
 :command! -nargs=0 Gentags :call GenerateTags()
 
