@@ -33,6 +33,7 @@ Bundle 'tpope/vim-pastie'
 Bundle 'docteurklein/php-getter-setter.vim'
 Bundle 'stephpy/vim-php-cs-fixer'
 Bundle 'phpcs.vim'
+Bundle 'joonty/vdebug.git'
 
 " ----------------------------
 " Regular Vim Configuration (No Plugins Needed)
@@ -192,7 +193,7 @@ let g:SuperTabDefaultCompletionType = "context"
 autocmd vimenter * if !argc() | NERDTree | endif
 
 " ---------------
-" PHP CS Fixed
+" PHP CS Fixer
 " ---------------
 let g:php_cs_fixer_path = "~/.vim/resources/php-cs-fixer.phar"
 
@@ -233,9 +234,18 @@ autocmd BufWritePre * :%s/\s\+$//e
 :endfunction
 :command! -nargs=1 Ltag :call LoadTags("<args>")
 
-" Load some default tags
-:call LoadTags("zf1")
-:call LoadTags("glitch3")
+" ---------------
+" Generate tagfile and load it
+" ---------------
+" Generate a tagfile with mkTags and directly load it
+:function! GenerateTags()
+:   let currentPath = expand("%:p:h")
+:   let baseName = expand("%:p:h:t")
+:   let mktagspath = "!~/.vim/bin/mkTags"
+:   execute mktagspath . " " . currentPath
+:   execute ":Ltag " . baseName
+:endfunction
+:command! -nargs=0 Gentags :call GenerateTags()
 
 " ---------------
 " Insert <tab> or use autocomplete
