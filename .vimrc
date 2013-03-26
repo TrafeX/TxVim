@@ -34,6 +34,8 @@ Bundle 'docteurklein/php-getter-setter.vim'
 Bundle 'stephpy/vim-php-cs-fixer'
 Bundle 'phpcs.vim'
 Bundle 'joonty/vdebug.git'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'beberlei/vim-php-refactor'
 
 " ----------------------------
 " Regular Vim Configuration (No Plugins Needed)
@@ -201,6 +203,13 @@ let g:php_cs_fixer_path = "~/.vim/resources/php-cs-fixer.phar"
 " PHP CodeStyle
 " ---------------
 let g:phpcs_std_list="PSR2"
+
+" ---------------
+" GitGutter
+" ---------------
+" Fix colorscheme for the sign column
+highlight clear SignColumn
+
 " ----------------------------
 " Functions
 " ----------------------------

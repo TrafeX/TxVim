@@ -14,6 +14,10 @@ With:
 * Solarized colorscheme
 * Mouse support under Ubuntu
 * Automatic strip trailling whitespaces
+* Xdebug integration
+* Easy refactoring using vim-php-refactor
+* PHP CodeStyle checks
+* GitGutter
 * Much more..
 
 Bundles:
@@ -27,6 +31,11 @@ Bundles:
 * 'tobyS/vip'
 * 'MarkDown'
 * 'tpope/vim-pastie'
+* 'stephpy/vim-php-cs-fixer'
+* 'phpcs.vim'
+* 'joonty/vdebug.git'
+* 'airblade/vim-gitgutter'
+* 'beberlei/vim-php-refactor'
 
 Install on Ubuntu
 ================
@@ -66,3 +75,5 @@ Bindings
 * `:Phpcs` Check the file on codestyle
 * `:GenTags` Generate tagfile with bin/mkTags and load it
 * `:Ltag <name>` Load the tagfile
+* `<Localleader>rlv` Rename local variable
+* `<Localleader>rcv` Rename class variable
