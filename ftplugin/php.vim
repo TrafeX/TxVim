@@ -1,9 +1,6 @@
 " .vim/ftplugin/php.vim by Tobias Schlitt <toby@php.net>.
 " No copyright, feel free to use this, as you like.
 
-" Including PDV
-source ~/.vim/bundle/vip/.vim/php-doc.vim
-
 let PHP_autoformatcomment = 1
 
 " {{{ Settings
@@ -37,10 +34,7 @@ setlocal keywordprg=pman
 noremap <buffer> ; :s/\([^;]\)$/\1;/<cr>
 
 " Map <ctrl>+p to single line mode documentation (in insert and command mode)
-inoremap <buffer> <C-P> :call PhpDocSingle()<CR>i
-nnoremap <buffer> <C-P> :call PhpDocSingle()<CR>
-" Map <ctrl>+p to multi line mode documentation (in visual mode)
-vnoremap <buffer> <C-P> :call PhpDocRange()<CR>
+nnoremap <buffer> <C-P> :call pdv#DocumentCurrentLine()<CR>
 
 " Map <CTRL>-H to search phpm for the function name currently under the cursor (insert mode only)
 inoremap <buffer> <C-H> <ESC>:!phpm <C-R>=expand("<cword>")<CR><CR>

@@ -4,14 +4,14 @@
 " ----------------------------------------
 
 " Be iMproved
-:set nocompatible
+set nocompatible
 
 " ----------------------------
 " Plugin bundles
 " ----------------------------
 
 " Set filetype detection off for Vundle
-:filetype off
+filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -21,7 +21,6 @@ Bundle 'gmarik/vundle'
 
 Bundle 'tpope/vim-fugitive'
 Bundle 'EvanDotPro/phpcomplete.vim'
-Bundle 'tobyS/vip'
 Bundle 'Markdown'
 Bundle 'mileszs/ack.vim'
 Bundle 'Lokaltog/vim-powerline'
@@ -36,6 +35,8 @@ Bundle 'phpcs.vim'
 Bundle 'joonty/vdebug.git'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'beberlei/vim-php-refactor'
+Bundle 'tobyS/vmustache'
+Bundle 'tobyS/pdv'
 
 " ----------------------------
 " Regular Vim Configuration (No Plugins Needed)
@@ -46,78 +47,82 @@ Bundle 'beberlei/vim-php-refactor'
 " ---------------
 
 " Turn on filetype detection (after vundle is loaded)
-:filetype plugin indent on
+filetype plugin indent on
 
 " Use rownumbers and syntax highlighting
-:set number
-:syntax on
+set number
+syntax on
 
 " Hidden buffers don't require saving before editing another file.
-:set hidden
+set hidden
 
 " Use the mouse in VIM
-:set mouse=a
+set mouse=a
+
+" Show a cursor line
+"autocmd InsertLeave * set nocursorline
+"autocmd InsertEnter * set cursorline
+set cursorline
 
 " Yanks go to clipboard
-:set clipboard=unnamed
+set clipboard=unnamed
 
 " Use a menu for autocomplete
-:set wildmenu
-:set wildmode=list:longest
+set wildmenu
+set wildmode=list:longest
 
 " Repair wired terminal/vim settings
 set backspace=start,eol,indent
 
 " We've a fast TTY :)
-:set ttyfast
+set ttyfast
 
 " ---------------
 " User Interface
 " ---------------
 
 " Show wich commands I've entered and in what mode we are in the statusline
-:set showcmd
-:set showmode
+set showcmd
+set showmode
 
 " Don't try to redraw every scroll action, it's slow
-:set lazyredraw
+set lazyredraw
 
 " Always show the statusline
 set laststatus=2
 
 " Always use UTF-8 as default
-:set encoding=utf-8
-
+set encoding=utf-8
 
 " ---------------
 " Text Format
 " ---------------
 
 " Correct tab and indent settings, use 4 spaces instead of tabs
-:set expandtab
-:set tabstop=4
-:set softtabstop=4
-:set shiftwidth=4
-:set smarttab
-:set shiftround
-:set autoindent
-:set smartindent
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set smarttab
+set shiftround
+set autoindent
+set smartindent
 
 " Don't wrap text
-:set nowrap
+set nowrap
 
 " Tagfile for the tag list
-:set tags=$HOME/.vim/doc/tags,tags;
+set tags=$HOME/.vim/doc/tags,tags;
 
 " ---------------
 " Backup
 " ---------------
 
 " Don't leave any files after closing VIM
-:set nobackup
+set nobackup
 
 " Save the swap files here
-:set dir=~/.vim/tmp/swapdir
+set dir=~/.vim/tmp/swapdir
 
 " Undo history between sessions
 " Only works in version 7.3 or higher
@@ -133,11 +138,11 @@ endif
 " ---------------
 
 " Make case-insensitive search the norm
-:set ignorecase
-:set smartcase
-:set incsearch
-:set hlsearch
-:set wildignore+=*.o,*.obj,*.exe,*.so,*.dll,*.pyc,.svn,.hg,.bzr,.git,
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+set wildignore+=*.o,*.obj,*.exe,*.so,*.dll,*.pyc,.svn,.hg,.bzr,.git,
   \.sass-cache,*.class,*.scssc,*.cssc,sprockets%*,*.lessc
 
 " ---------------
@@ -210,6 +215,12 @@ let g:phpcs_std_list="PSR2"
 " Fix colorscheme for the sign column
 highlight clear SignColumn
 
+" ---------------
+" PDV
+" ---------------
+" Path to templates
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
+
 " ----------------------------
 " Functions
 " ----------------------------
@@ -220,41 +231,29 @@ highlight clear SignColumn
 autocmd BufWritePre * :%s/\s\+$//e
 
 " ---------------
-" Set correct filetypes
-" ---------------
-" .inc, phpt, phtml, phps files as PHP
-:autocmd BufNewFile,BufRead *.inc set ft=php
-:autocmd BufNewFile,BufRead *.phpt set ft=php
-:autocmd BufNewFile,BufRead *.phtml set ft=php
-:autocmd BufNewFile,BufRead *.phps set ft=php
-" Vagrantfile, .pp as Ruby
-:autocmd BufNewFile,BufRead *Vagrantfile set ft=ruby
-:autocmd BufNewFile,BufRead *.pp set ft=ruby
-
-" ---------------
 " Tagfile loading
 " ---------------
 " Loads a tag file from ~/.vim/mytags/, based on the argument provided. The
 " command "Ltag"" is mapped to this function.
-:function! LoadTags(file)
-:   let tagspath = $HOME . "/.vim/mytags/" . a:file
-:   let tagcommand = 'set tags+=' . tagspath
-:   execute tagcommand
-:endfunction
-:command! -nargs=1 Ltag :call LoadTags("<args>")
+function! LoadTags(file)
+   let tagspath = $HOME . "/.vim/mytags/" . a:file
+   let tagcommand = 'set tags+=' . tagspath
+   execute tagcommand
+endfunction
+command! -nargs=1 Ltag :call LoadTags("<args>")
 
 " ---------------
 " Generate tagfile and load it
 " ---------------
 " Generate a tagfile with mkTags and directly load it
-:function! GenerateTags()
-:   let mktagspath = "!~/.vim/bin/mkTags"
-:   execute mktagspath . " `pwd`"
-:   let baseName = system('basename `pwd`')
-:   execute ":Ltag " baseName
-:   echo "Loaded tagfile: " . baseName
-:endfunction
-:command! -nargs=0 Gentags :call GenerateTags()
+function! GenerateTags()
+   let mktagspath = "!~/.vim/bin/mkTags"
+   execute mktagspath . " `pwd`"
+   let baseName = system('basename `pwd`')
+   execute ":Ltag " baseName
+   echo "Loaded tagfile: " . baseName
+endfunction
+command! -nargs=0 Gentags :call GenerateTags()
 
 " ---------------
 " Insert <tab> or use autocomplete

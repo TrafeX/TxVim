@@ -18,6 +18,7 @@ With:
 * Easy refactoring using vim-php-refactor
 * PHP CodeStyle checks
 * GitGutter
+* PHPDoc generation
 * Much more..
 
 Bundles:
@@ -28,7 +29,6 @@ Bundles:
 * 'ervandew/supertab'
 * 'altercation/vim-colors-solarized'
 * 'Lokaltog/vim-powerline'
-* 'tobyS/vip'
 * 'MarkDown'
 * 'tpope/vim-pastie'
 * 'stephpy/vim-php-cs-fixer'
@@ -36,6 +36,8 @@ Bundles:
 * 'joonty/vdebug.git'
 * 'airblade/vim-gitgutter'
 * 'beberlei/vim-php-refactor'
+* 'tobyS/vmustache'
+* 'tobyS/pdv'
 
 Install on Ubuntu
 ================
@@ -61,6 +63,7 @@ Some random vim tricks I like to remember
 * `%` Find next matching bracket
 * `ctrl + v` Go into column mode, make selection, `shift + i` insert text, `esc` text will be copied to selection
 * Pressing `m` in NERDTRee gives the ability to do some basic tools for adding/moving files/folders
+* `:mess` Shows the last (error) messages
 
 Bindings
 ========
