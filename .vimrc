@@ -37,6 +37,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'beberlei/vim-php-refactor'
 Bundle 'tobyS/vmustache'
 Bundle 'tobyS/pdv'
+Bundle 'rodjek/vim-puppet'
 
 " ----------------------------
 " Regular Vim Configuration (No Plugins Needed)
@@ -221,6 +222,33 @@ highlight clear SignColumn
 " Path to templates
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
 
+" ---------------
+" PHP Getter/Setter
+" ---------------
+"
+let g:phpgetset_getterTemplate =
+\ "    \n" .
+\ "    /**\n" .
+\ "     * Get %varname%.\n" .
+\ "     *\n" .
+\ "     * @return string\n" .
+\ "     */\n" .
+\ "    public function %funcname%()\n" .
+\ "    {\n" .
+\ "        return $this->%varname%;\n" .
+\ "    }"
+
+let g:phpgetset_setterTemplate =
+\ "    \n" .
+\ "    /**\n" .
+\ "     * Set %varname%.\n" .
+\ "     *\n" .
+\ "     * @param $%varname% string\n" .
+\ "     */\n" .
+\ "    public function %funcname%($%varname%)\n" .
+\ "    {\n" .
+\ "        $this->%varname% = $%varname%;\n" .
+\ "    }"
 " ----------------------------
 " Functions
 " ----------------------------
@@ -282,3 +310,4 @@ endif
 "
 nnoremap <C-F8> :TlistToggle<CR><CR>
 inoremap <Tab> <C-R>=MyTabOrComplete()<CR>
+nnoremap <Leader>m :silent !markdown-calibre "%" -f "%".html && sensible-browser "%".html && rm -f "%".html<CR>

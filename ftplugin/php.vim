@@ -11,7 +11,7 @@ setlocal textwidth=79
 setlocal formatoptions=qrocb
 
 " Show line after 120 chars to indicate the max line length
-set colorcolumn=120
+setlocal colorcolumn=120
 
 " Correct indentation after opening a phpdocblock and automatic * on every
 " line
