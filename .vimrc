@@ -226,29 +226,29 @@ let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
 " PHP Getter/Setter
 " ---------------
 "
-let g:phpgetset_getterTemplate =
-\ "    \n" .
-\ "    /**\n" .
-\ "     * Get %varname%.\n" .
-\ "     *\n" .
-\ "     * @return string\n" .
-\ "     */\n" .
-\ "    public function %funcname%()\n" .
-\ "    {\n" .
-\ "        return $this->%varname%;\n" .
-\ "    }"
+let b:phpgetset_getterTemplate =
+    \ "    \n" .
+    \ "    /**\n" .
+    \ "     * Get %varname%.\n" .
+    \ "     *\n" .
+    \ "     * @return string\n" .
+    \ "     */\n" .
+    \ "    public function %funcname%()\n" .
+    \ "    {\n" .
+    \ "        return $this->%varname%;\n" .
+    \ "    }"
 
-let g:phpgetset_setterTemplate =
-\ "    \n" .
-\ "    /**\n" .
-\ "     * Set %varname%.\n" .
-\ "     *\n" .
-\ "     * @param $%varname% string\n" .
-\ "     */\n" .
-\ "    public function %funcname%($%varname%)\n" .
-\ "    {\n" .
-\ "        $this->%varname% = $%varname%;\n" .
-\ "    }"
+let b:phpgetset_setterTemplate =
+    \ "    \n" .
+    \ "    /**\n" .
+    \ "     * Set %varname%.\n" .
+    \ "     *\n" .
+    \ "     * @param $%varname% string\n" .
+    \ "     */\n" .
+    \ "    public function %funcname%($%varname%)\n" .
+    \ "    {\n" .
+    \ "        $this->%varname% = $%varname%;\n" .
+    \ "    }"
 " ----------------------------
 " Functions
 " ----------------------------
