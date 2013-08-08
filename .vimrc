@@ -31,13 +31,13 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-pastie'
 Bundle 'docteurklein/php-getter-setter.vim'
 Bundle 'stephpy/vim-php-cs-fixer'
-Bundle 'phpcs.vim'
 Bundle 'joonty/vdebug.git'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'beberlei/vim-php-refactor'
 Bundle 'tobyS/vmustache'
 Bundle 'tobyS/pdv'
 Bundle 'rodjek/vim-puppet'
+Bundle 'joonty/vim-phpqa.git'
 
 " ----------------------------
 " Regular Vim Configuration (No Plugins Needed)
@@ -206,11 +206,6 @@ autocmd vimenter * if !argc() | NERDTree | endif
 let g:php_cs_fixer_path = "~/.vim/resources/php-cs-fixer.phar"
 
 " ---------------
-" PHP CodeStyle
-" ---------------
-let g:phpcs_std_list="PSR2"
-
-" ---------------
 " GitGutter
 " ---------------
 " Fix colorscheme for the sign column
@@ -220,12 +215,12 @@ highlight clear SignColumn
 " PDV
 " ---------------
 " Path to templates
-let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
+let g:pdv_template_dir = $HOME ."/.vim/resources/phpdoctemplates"
 
 " ---------------
 " PHP Getter/Setter
 " ---------------
-"
+
 let b:phpgetset_getterTemplate =
     \ "    \n" .
     \ "    /**\n" .
@@ -249,6 +244,22 @@ let b:phpgetset_setterTemplate =
     \ "    {\n" .
     \ "        $this->%varname% = $%varname%;\n" .
     \ "    }"
+
+" ---------------
+" PHP QA
+" ---------------
+" PHPCs standard
+let g:phpqa_codesniffer_args = "--standard=PSR2"
+
+" Don't run messdetector on save
+let g:phpqa_messdetector_autorun = 0
+
+" Don't run codesniffer on save
+let g:phpqa_codesniffer_autorun = 0
+
+" Show code coverage on load
+let g:phpqa_codecoverage_autorun = 0
+
 " ----------------------------
 " Functions
 " ----------------------------

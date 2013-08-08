@@ -38,6 +38,7 @@ Bundles:
 * 'beberlei/vim-php-refactor'
 * 'tobyS/vmustache'
 * 'tobyS/pdv'
+* 'joonty/vim-phpqa.git'
 
 Install on Ubuntu
 ================
@@ -80,3 +81,5 @@ Bindings
 * `:Ltag <name>` Load the tagfile
 * `<Localleader>rlv` Rename local variable
 * `<Localleader>rcv` Rename class variable
+* `<Leader>qa` Show/hide code sniffer and mess detector violations
+* `<Leader>qc` Show/hide code coverage markers
