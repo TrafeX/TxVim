@@ -23,7 +23,6 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'EvanDotPro/phpcomplete.vim'
 Bundle 'Markdown'
 Bundle 'mileszs/ack.vim'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'taglist.vim'
 Bundle 'ervandew/supertab'
@@ -38,6 +37,9 @@ Bundle 'tobyS/vmustache'
 Bundle 'tobyS/pdv'
 Bundle 'rodjek/vim-puppet'
 Bundle 'joonty/vim-phpqa.git'
+Bundle 'bling/vim-airline'
+Bundle 'xsbeats/vim-blade'
+Bundle 'kien/ctrlp.vim'
 
 " ----------------------------
 " Regular Vim Configuration (No Plugins Needed)
@@ -170,12 +172,6 @@ set t_Co=256
 colorscheme solarized
 
 " ---------------
-" Powerline
-" ---------------
-" Set powerline to use unicode symbols
-let g:Powerline_symbols="unicode"
-
-" ---------------
 " Taglist
 " ---------------
 let Tlist_Use_Right_Window = 1
@@ -199,6 +195,7 @@ let g:SuperTabDefaultCompletionType = "context"
 " ---------------
 " load NERDTree on startup if no other files are given as argument
 autocmd vimenter * if !argc() | NERDTree | endif
+let NERDTreeShowHidden=1
 
 " ---------------
 " PHP CS Fixer
@@ -259,6 +256,31 @@ let g:phpqa_codesniffer_autorun = 0
 
 " Show code coverage on load
 let g:phpqa_codecoverage_autorun = 0
+
+" ---------------
+" Airline
+" ---------------
+
+let g:airline_symbols = {}
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇ '
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" ---------------
+" Ctrlp
+" ---------------
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 " ----------------------------
 " Functions
