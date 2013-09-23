@@ -83,3 +83,7 @@ Bindings
 * `<Localleader>rcv` Rename class variable
 * `<Leader>qa` Show/hide code sniffer and mess detector violations
 * `<Leader>qc` Show/hide code coverage markers
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/TrafeX/txvim/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
