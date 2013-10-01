@@ -47,7 +47,7 @@ For the best VIM experience on Ubuntu follow the following steps:
 1. Clone the repository (with --recursive for the submodules) to ~/.vim and make a symlink for the .vimrc
 2. Install `vim-gnome`, this gives a better integration on your terminal and let you use the system clipboard
 3. To use the bundles, open `vim` and run `:BundleInstall`
-4. Install `ack-grep`
+4. Install `ack-grep` and `exuberant-ctags`
 5. Setup colors of your terminal for the solarize colorscheme (see https://gist.github.com/1280177)
 
 Tricks
