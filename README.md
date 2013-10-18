@@ -5,7 +5,6 @@ Using Vundle
 With:
 
 * Taglist
-* PHP functionlist from http://lerdorf.com/funclist.txt
 * Fugitive for GIT support
 * Powerline
 * PHP autocomplete
@@ -22,23 +21,30 @@ With:
 * Much more..
 
 Bundles:
+
 * 'gmarik/vundle'
 * 'tpope/vim-fugitive'
-* 'scrooloose/nerdtree'
-* 'EvanDotPro/phpcomplete.vim'
-* 'ervandew/supertab'
+* 'Markdown'
+* 'mileszs/ack.vim'
 * 'altercation/vim-colors-solarized'
-* 'Lokaltog/vim-powerline'
-* 'MarkDown'
+* 'taglist.vim'
+* 'ervandew/supertab'
+* 'scrooloose/nerdtree'
 * 'tpope/vim-pastie'
+* 'docteurklein/php-getter-setter.vim'
 * 'stephpy/vim-php-cs-fixer'
-* 'phpcs.vim'
 * 'joonty/vdebug.git'
 * 'airblade/vim-gitgutter'
 * 'beberlei/vim-php-refactor'
 * 'tobyS/vmustache'
 * 'tobyS/pdv'
+* 'rodjek/vim-puppet'
 * 'joonty/vim-phpqa.git'
+* 'bling/vim-airline'
+* 'xsbeats/vim-blade'
+* 'kien/ctrlp.vim'
+* 'shawncplus/phpcomplete.vim'
+* 'joonty/vim-taggatron'
 
 Install on Ubuntu
 ================

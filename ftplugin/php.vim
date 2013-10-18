@@ -51,7 +51,7 @@ vnoremap <buffer> <C-c> :call PhpUnComment()<CR>
 
 " The completion dictionary is provided by Rasmus:
 " http://lerdorf.com/funclist.txt
-setlocal dictionary-=$HOME/.vim/phpfunclist.txt dictionary+=$HOME/.vim/phpfunclist.txt
+"setlocal dictionary-=$HOME/.vim/phpfunclist.txt dictionary+=$HOME/.vim/phpfunclist.txt
 " Use the dictionary completion
 setlocal complete-=k complete+=k
 

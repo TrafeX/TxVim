@@ -20,7 +20,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'tpope/vim-fugitive'
-Bundle 'EvanDotPro/phpcomplete.vim'
 Bundle 'Markdown'
 Bundle 'mileszs/ack.vim'
 Bundle 'altercation/vim-colors-solarized'
@@ -40,6 +39,8 @@ Bundle 'joonty/vim-phpqa.git'
 Bundle 'bling/vim-airline'
 Bundle 'xsbeats/vim-blade'
 Bundle 'kien/ctrlp.vim'
+Bundle 'shawncplus/phpcomplete.vim'
+Bundle 'joonty/vim-taggatron'
 
 " ----------------------------
 " Regular Vim Configuration (No Plugins Needed)
@@ -281,6 +282,13 @@ let g:airline_symbols.whitespace = 'Ξ'
 " ---------------
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+" ---------------
+" Taggatron
+" ---------------
+let g:tagcommands = {
+\    "php" : {"tagfile":".php.tags","args":"-R"}
+\}
 
 " ----------------------------
 " Functions
