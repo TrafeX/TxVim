@@ -35,12 +35,13 @@ Bundle 'beberlei/vim-php-refactor'
 Bundle 'tobyS/vmustache'
 Bundle 'tobyS/pdv'
 Bundle 'rodjek/vim-puppet'
-Bundle 'joonty/vim-phpqa.git'
 Bundle 'bling/vim-airline'
 Bundle 'xsbeats/vim-blade'
 Bundle 'kien/ctrlp.vim'
 Bundle 'shawncplus/phpcomplete.vim'
-Bundle 'joonty/vim-taggatron'
+Bundle 'editorconfig/editorconfig-vim'
+Bundle 'Rykka/riv.vim'
+Bundle 'scrooloose/syntastic.git'
 
 " ----------------------------
 " Regular Vim Configuration (No Plugins Needed)
@@ -244,21 +245,6 @@ let b:phpgetset_setterTemplate =
     \ "    }"
 
 " ---------------
-" PHP QA
-" ---------------
-" PHPCs standard
-let g:phpqa_codesniffer_args = "--standard=PSR2"
-
-" Don't run messdetector on save
-let g:phpqa_messdetector_autorun = 0
-
-" Don't run codesniffer on save
-let g:phpqa_codesniffer_autorun = 0
-
-" Show code coverage on load
-let g:phpqa_codecoverage_autorun = 0
-
-" ---------------
 " Airline
 " ---------------
 
@@ -280,15 +266,16 @@ let g:airline_symbols.whitespace = 'Ξ'
 " ---------------
 " Ctrlp
 " ---------------
-let g:ctrlp_map = '<c-p>'
+let g:ctrlp_map = '<c-P>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 " ---------------
-" Taggatron
+" Syntastic
 " ---------------
-let g:tagcommands = {
-\    "php" : {"tagfile":".php.tags","args":"-R"}
-\}
+
+" Set PSR-2 as default codestyle
+let g:syntastic_php_phpcs_args="--report=csv --standard=PSR2"
 
 " ----------------------------
 " Functions

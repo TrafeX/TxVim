@@ -39,12 +39,13 @@ Bundles:
 * 'tobyS/vmustache'
 * 'tobyS/pdv'
 * 'rodjek/vim-puppet'
-* 'joonty/vim-phpqa.git'
 * 'bling/vim-airline'
 * 'xsbeats/vim-blade'
 * 'kien/ctrlp.vim'
 * 'shawncplus/phpcomplete.vim'
-* 'joonty/vim-taggatron'
+* 'editorconfig/editorconfig-vim'
+* 'Rykka/riv.vim'
+* 'scrooloose/syntastic.git'
 
 Install on Ubuntu
 ================
@@ -71,6 +72,9 @@ Some random vim tricks I like to remember
 * `ctrl + v` Go into column mode, make selection, `shift + i` insert text, `esc` text will be copied to selection
 * Pressing `m` in NERDTRee gives the ability to do some basic tools for adding/moving files/folders
 * `:mess` Shows the last (error) messages
+* `zR` Opens all folds
+* `ctrl + o` Open previous opened files
+* `ctrl + i` Open newly opened files
 
 Bindings
 ========
