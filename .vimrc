@@ -42,6 +42,8 @@ Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'Rykka/riv.vim'
 Bundle 'scrooloose/syntastic.git'
+Bundle 'terryma/vim-expand-region'
+Bundle 'elzr/vim-json'
 
 " ----------------------------
 " Regular Vim Configuration (No Plugins Needed)
@@ -65,8 +67,6 @@ set hidden
 set mouse=a
 
 " Show a cursor line
-"autocmd InsertLeave * set nocursorline
-"autocmd InsertEnter * set cursorline
 set cursorline
 
 " Yanks go to clipboard
@@ -81,6 +81,9 @@ set backspace=start,eol,indent
 
 " We've a fast TTY :)
 set ttyfast
+
+" Use blowfish as default encryption for :X
+set cm=blowfish
 
 " ---------------
 " User Interface
@@ -277,7 +280,13 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 " Set PSR-2 as default codestyle
 let g:syntastic_php_phpcs_args="--report=csv --standard=PSR2"
 
-" ----------------------------
+" ---------------
+" vim-json
+" ---------------
+
+" Disable concealing of double quotes
+let g:vim_json_syntax_conceal = 0
+
 " Functions
 " ----------------------------
 
