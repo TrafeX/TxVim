@@ -44,6 +44,9 @@ Bundle 'Rykka/riv.vim'
 Bundle 'scrooloose/syntastic.git'
 Bundle 'terryma/vim-expand-region'
 Bundle 'elzr/vim-json'
+"Disabled; Makes loading .sls files very slow.
+"Bundle 'saltstack/salt-vim'
+Bundle 'clickable.vim'
 
 " ----------------------------
 " Regular Vim Configuration (No Plugins Needed)
@@ -278,7 +281,7 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 " ---------------
 
 " Set PSR-2 as default codestyle
-let g:syntastic_php_phpcs_args="--report=csv --standard=PSR2"
+let g:syntastic_php_phpcs_args = "--report=csv --standard=PSR2"
 
 " ---------------
 " vim-json
@@ -286,6 +289,13 @@ let g:syntastic_php_phpcs_args="--report=csv --standard=PSR2"
 
 " Disable concealing of double quotes
 let g:vim_json_syntax_conceal = 0
+
+" ---------------
+" Vdebug
+" ---------------
+let g:vdebug_options = {}
+let g:vdebug_options['path_maps'] = {"/vagrant": "/srv/http/project"}
+let g:vdebug_options['server'] = ''
 
 " Functions
 " ----------------------------
