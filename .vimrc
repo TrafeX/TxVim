@@ -73,7 +73,7 @@ set mouse=a
 set cursorline
 
 " Yanks go to clipboard
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " Use a menu for autocomplete
 set wildmenu
