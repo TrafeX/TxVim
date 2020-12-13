@@ -14,39 +14,40 @@ set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
 " let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
+" other plugins
+Plugin 'tpope/vim-fugitive'
+Plugin 'Markdown'
+Plugin 'mileszs/ack.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'taglist.vim'
+Plugin 'ervandew/supertab'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-pastie'
+Plugin 'trafex/php-getter-setter.vim'
+Plugin 'stephpy/vim-php-cs-fixer'
+Plugin 'joonty/vdebug.git'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'beberlei/vim-php-refactor'
+Plugin 'tobyS/vmustache'
+Plugin 'tobyS/pdv'
+Plugin 'rodjek/vim-puppet'
+Plugin 'bling/vim-airline'
+Plugin 'xsbeats/vim-blade'
+Plugin 'kien/ctrlp.vim'
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'Rykka/riv.vim'
+Plugin 'scrooloose/syntastic.git'
+Plugin 'terryma/vim-expand-region'
+Plugin 'elzr/vim-json'
+Plugin 'junegunn/vim-emoji'
+Plugin 'clickable.vim'
 
-Bundle 'tpope/vim-fugitive'
-Bundle 'Markdown'
-Bundle 'mileszs/ack.vim'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'taglist.vim'
-Bundle 'ervandew/supertab'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-pastie'
-Bundle 'trafex/php-getter-setter.vim'
-Bundle 'stephpy/vim-php-cs-fixer'
-Bundle 'joonty/vdebug.git'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'beberlei/vim-php-refactor'
-Bundle 'tobyS/vmustache'
-Bundle 'tobyS/pdv'
-Bundle 'rodjek/vim-puppet'
-Bundle 'bling/vim-airline'
-Bundle 'xsbeats/vim-blade'
-Bundle 'kien/ctrlp.vim'
-Bundle 'shawncplus/phpcomplete.vim'
-Bundle 'editorconfig/editorconfig-vim'
-Bundle 'Rykka/riv.vim'
-Bundle 'scrooloose/syntastic.git'
-Bundle 'terryma/vim-expand-region'
-Bundle 'elzr/vim-json'
-"Disabled; Makes loading .sls files very slow.
-"Bundle 'saltstack/salt-vim'
-Bundle 'clickable.vim'
+call vundle#end()
 
 " ----------------------------
 " Regular Vim Configuration (No Plugins Needed)
@@ -166,6 +167,11 @@ set t_vb=
 " ----------------------------
 " Plugin configuration
 " ----------------------------
+
+" ---------------
+" Emoji <CTRL-X CTL-E>
+" ---------------
+set completefunc=emoji#complete
 
 " ---------------
 " Ack grep
