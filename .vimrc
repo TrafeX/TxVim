@@ -46,6 +46,7 @@ Plugin 'terryma/vim-expand-region'
 Plugin 'elzr/vim-json'
 Plugin 'junegunn/vim-emoji'
 Plugin 'clickable.vim'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 
